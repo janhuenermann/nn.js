@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+</head>
+
+<body>
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="build/nn.js"></script>
+  <script type="text/javascript">
+	var layers = [
+	    { type: 'input', size: nn.Size3(1, 1, 2) }, 
+	    { type: 'dot', size: 100 }, 
+	    { type: 'tanh' }, 
+	    { type: 'dot', size: 1 }, 
+	    { type: 'sigmoid' },
+	    { type: 'regression' }
+	];
+
+	var net = new nn.Network({
+	    layers: layers,
+	    learner: { method: 'adadelta' }
+	});
+
+  	setTimeout(function () {
+
+		for (var i = 0; i < 10000; i++) {
+		    var a = Math.random() > 0.5;
+		    var b = Math.random() > 0.5;
+		    var c = a != b;
+		    var o = net.forward([a ? 1.0 : 0.0, b ? 1.0 : 0.0]);
+		    var loss = net.backward([c?1.0:0.0]);
+		    if (i % 10 == 0) { console.log(loss); }
+		}
+
+
+	}, 1);
+
+  </script>
+</body>
+</html
