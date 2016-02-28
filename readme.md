@@ -11,13 +11,11 @@ A JavaScript implementation of common neural network algorithms, including convo
 ### Example
 Here is an example for how to create a simple neural net that can predict a XOR-gate:
 ```javascript
-// create a neural network, which has 6 layers, including 2 fully-connected layers
+// create a neural network, which has 4 layers, including 2 fully-connected layers
 var layers = [
     { type: 'input', size: nn.Size3(1, 1, 2) }, 
-    { type: 'dot', size: 20 }, 
-    { type: 'tanh' }, 
-    { type: 'dot', size: 1 }, 
-    { type: 'sigmoid' },
+    { type: 'dot', size: 20, activation: 'tanh' }, 
+    { type: 'dot', size: 1, activation: 'sigmoid' }, 
     { type: 'regression' }
 ];
 
@@ -41,7 +39,7 @@ for (var i = 0; i < 10000; i++) {
     if (i % 100 == 0) { 
         console.log(loss); 
     }
-} // repeat 10000
+} // repeat 10000 times
 ```
 
 ### Why JavaScript?

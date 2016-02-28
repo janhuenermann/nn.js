@@ -1,19 +1,19 @@
 require('console-stamp')(console, 'HH:MM:ss.l');
 var nn = require('../build/nn.js');
 
-    var layers = [
-        { type: 'input', size: nn.Size3(1, 1, 2) }, 
-        { type: 'dot', size: 100 }, 
-        { type: 'tanh' }, 
-        { type: 'dot', size: 1 }, 
-        { type: 'sigmoid' },
-        { type: 'regression' }
-    ];
+var layers = [
+    { type: 'input', size: nn.Size3(1, 1, 2) }, 
+    { type: 'dot', size: 20, activation: 'tanh' }, 
+    { type: 'dot', size: 1, activation: 'sigmoid' }, 
+    { type: 'regression' }
+];
 
 var net = new nn.Network({
     layers: layers,
     learner: { method: 'adadelta' }
 });
+
+console.log(net.layers);
 
 console.time("nn");
 for (var i = 0; i < 100000; i++) {
