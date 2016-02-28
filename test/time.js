@@ -11,9 +11,7 @@ var layers = [
 var net = new nn.Network({
     layers: layers,
     learner: {
-        method: 'sgd',
-        rate: 0.01,
-        momentum: 0.9,
+        method: 'adadelta',
         timespan: 5,
         decay: { l1: 0, l2: 1e-5 }
     }
