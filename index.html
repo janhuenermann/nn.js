@@ -10,6 +10,7 @@
 
 <body>
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <h1>Delay demo: shift a signal 4 time steps</h1>
     <div id="log"></div>
     <script>
     function log(msg) {
@@ -24,7 +25,7 @@
     // Note: window.webkitURL.createObjectURL() in Chrome 10+.
     var worker = new Worker('test/time.js');
     worker.onmessage = function(e) {
-        log("Received: " + e.data);
+        log(e.data);
     }
     worker.postMessage("hello"); // Start the worker.
     </script>

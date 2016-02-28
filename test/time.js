@@ -9,10 +9,20 @@ if (typeof module === "undefined" || typeof module.exports === "undefined") {
 }
 
 var layers = [
-    { type: 'input', size: nn.Size3(1, 1, 1) },
-    { type: 'dot', size: 1 },
-    { type: 'lstm' },
-    { type: 'regression' }
+    { 
+        type: 'input', 
+        size: nn.Size3(1, 1, 1) 
+    },
+    { 
+        type: 'dot', 
+        size: 1 
+    },
+    { 
+        type: 'lstm' 
+    },
+    { 
+        type: 'regression' 
+    }
 ];
 
 var net = new nn.Network({
