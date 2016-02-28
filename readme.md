@@ -18,7 +18,7 @@ I decided to write this library in JavaScript because it basically runs on every
 - Regression and input layer
 - Drop-out layer
 
-# Future
+## Future
 - Embedding layer
 - More & better demos (MNIST demo, CIFAR-10 demo, char-rnn demo, performance tests, etc)
 - Maybe native web worker support (especially Chrome is like 2x faster)
