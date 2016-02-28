@@ -1,25 +1,13 @@
-# A generalized approach to neural networks
-This library is intended to be a generalized model of neural networks, which enable computer to learn. The idea is to combine existing NN-ideas and combine them into one project, so you not only have to have different libraries, but you can also combine the different algorithms.
+## nn.js
+nn.js is a JavaScript implementation of common neural network algorithms, including convolutional and recurrent models. 
 
-### Why JavaScript?
-The language itself is one of the most-adopted and easiest to learn languages you can choose. Being able to just load a webpage and having the library do its job is very important. In addition through the use of NodeJS you can run the library on the server-side, enabling new possibilites for usage in recommendation engines and other computer learning problems.
-
-## Features
+### Features
 - A generalized BPTT (back-propagation through time) algorithm for use in either recurrent or feed-forward models
 - Abstract layer-network model
 - Network model & network data-flow are seperated
 - Web worker support for fast asynchronous background processing
 
-## Current layer implementations
-- Fully connected layer (Dot)
-- Convolutional layer
-- Long Short-Term memory layer
-- Softmax and hierarchical softmax layer
-- Non-linear layers like sigmoid, tanh and rectifier
-- Regression and input layer
-- Drop-out layer
-
-## Example
+### Example
 Here is an example for how to create a simple neural net that can predict a XOR-gate:
 ```javascript
 // create a neural network, which has 6 layers, including 2 fully-connected layers
@@ -55,13 +43,25 @@ for (var i = 0; i < 10000; i++) {
 } // repeat 10000
 ```
 
-## Future
+### Why JavaScript?
+JavaScript is one of the most-adopted and easiest to learn languages available. Being able to just load a webpage and having the library do its job is very important, it makes it more available to people, especially non-programmers. Additionally through the use of NodeJS you can run the library on the server-side, enabling new possibilites for usage in recommendation engines etc.
+
+### Currently implemented layers
+- Fully connected layer (Dot)
+- Convolutional layer
+- Long Short-Term memory layer
+- Softmax and hierarchical softmax layer
+- Non-linear layers like sigmoid, tanh and rectifier
+- Regression and input layer
+- Drop-out layer
+
+### Future
 - More & better demos (MNIST demo, CIFAR-10 demo, char-rnn demo, performance tests, etc)
 - Reinforcement learning
 - Embedding layer
 
-## Acknowledgments
+### Acknowledgments
 I would like to thank @karpathy (Andrej Karpathy) for his rigorous work on JavaScript deep-learning libraries, which I took inspiration and help from. (In parts you can see that in the code)
 
-## License
+### License
 MIT
