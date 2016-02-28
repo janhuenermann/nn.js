@@ -1,8 +1,9 @@
 ## nn.js
-nn.js is a JavaScript implementation of common neural network algorithms, including convolutional and recurrent models. 
+A JavaScript implementation of common neural network algorithms, including convolutional and recurrent models. 
 
 ### Features
-- A generalized BPTT (back-propagation through time) algorithm for use in either recurrent or feed-forward models
+- A **generalized BPTT** (back-propagation through time) algorithm for use in either recurrent or feed-forward models
+- Applications in computer vision, natural language processing (NLP) and control policy learning.
 - Abstract layer-network model
 - Network model & network data-flow are seperated
 - Web worker support for fast asynchronous background processing
