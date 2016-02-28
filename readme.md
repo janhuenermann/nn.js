@@ -8,6 +8,7 @@ I decided to write this library in JavaScript because it basically runs on every
 - A generalized BPTT (back-propagation through time) algorithm for use in either recurrent or feed-forward models
 - Abstract layer-network model
 - Network model & network data-flow are seperated
+- Web worker support for fast asynchronous background processing
 
 ## Current layer implementations
 - Fully connected layer (Dot)
@@ -19,9 +20,9 @@ I decided to write this library in JavaScript because it basically runs on every
 - Drop-out layer
 
 ## Future
-- Embedding layer
 - More & better demos (MNIST demo, CIFAR-10 demo, char-rnn demo, performance tests, etc)
-- Maybe native web worker support (especially Chrome is like 2x faster)
+- Reinforcement learning
+- Embedding layer
 
 ## Acknowledgments
 I would like to thank @karpathy (Andrej Karpathy) for his rigorous work on JavaScript deep-learning libraries, which I took inspiration and help from. (In parts you can see that in the code)

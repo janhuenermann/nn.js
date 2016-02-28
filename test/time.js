@@ -1,12 +1,5 @@
-var nn = null;
-
-if (typeof module === "undefined" || typeof module.exports === "undefined") {
-    self.importScripts('../build/nn.js');
-    nn = nnjs;
-} else {
-    require('console-stamp')(console, 'HH:MM:ss.l');
-    nn = require('../build/nn.js');
-}
+require('console-stamp')(console, 'HH:MM:ss.l');
+var nn = require('../build/nn.js');
 
 var layers = [
     { 
