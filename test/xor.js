@@ -1,14 +1,14 @@
 require('console-stamp')(console, 'HH:MM:ss.l');
 var nn = require('../build/nn.js');
 
-	var layers = [
-	    { type: 'input', size: nn.Size3(1, 1, 2) }, 
-	    { type: 'dot', size: 100 }, 
-	    { type: 'tanh' }, 
-	    { type: 'dot', size: 1 }, 
-	    { type: 'sigmoid' },
-	    { type: 'regression' }
-	];
+    var layers = [
+        { type: 'input', size: nn.Size3(1, 1, 2) }, 
+        { type: 'dot', size: 100 }, 
+        { type: 'tanh' }, 
+        { type: 'dot', size: 1 }, 
+        { type: 'sigmoid' },
+        { type: 'regression' }
+    ];
 
 var net = new nn.Network({
     layers: layers,
