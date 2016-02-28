@@ -1,31 +1,7 @@
-require('console-stamp')(console, 'HH:MM:ss.l');
-var nn = require('../build/nn.js');
+function log(text) { ww.trigger('log', [text]); }
 
-var layers = [
-    { 
-        type: 'input', 
-        size: nn.Size3(1, 1, 1) 
-    },
-    { 
-        type: 'dot', 
-        size: 1 
-    },
-    { 
-        type: 'lstm' 
-    },
-    { 
-        type: 'regression' 
-    }
-];
-
-var net = new nn.Network({
-    layers: layers,
-    learner: {
-        method: 'adadelta',
-        timespan: 5,
-        decay: { l2: 1e-5 }
-    }
-});
+var layers = [{ type: 'input', size: nn.Size3(1, 1, 1) }, { type: 'dot', size: 1 }, { type: 'lstm' }, { type: 'regression' }];
+var net = new nn.Network({ layers: layers, learner: { method: 'adadelta', timespan: 5, decay: { l2: 1e-5 } } });
 
 /* learns to delay a number for 4 time steps */
 console.time("nn");
@@ -45,15 +21,9 @@ for (var i = 0; i < 500000; i++) {
         var loss = net.backward([1]);
 
         if (k % 10000 === 0) {
-            if (typeof postMessage !== 'undefined') {
-                postMessage('run ' + k);
-                postMessage(seq.toString());
-                postMessage('loss: ' + loss);
-            } else {
-                console.log('run ' + k);
-                console.log(seq.toString());
-                console.log('loss: ' + loss);
-            }
+            log('run ' + k);
+            log(seq.toString());
+            log('loss: ' + loss)
         }
         ++k;
     }
