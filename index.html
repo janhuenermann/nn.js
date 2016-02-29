@@ -3,27 +3,15 @@
 
 <head>
     <meta charset="utf-8">
-    <title>The HTML5 Herald</title>
+    <title>MNIST</title>
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
 </head>
 
-<body>
+<body style="background: #000;">
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="build/nn.js"></script>
-    <h1>Delay demo: shift a signal 4 time steps</h1>
-    <div id="log"></div>
-    <script>
-    var worker = new nn.WebWorker('test/time.js', 'build/nn.js');
-    
-    worker.on('log', function (text) {
-        // Use a fragment: browser will only render/reflow once.
-        var fragment = document.createDocumentFragment();
-        fragment.appendChild(document.createTextNode(text));
-        fragment.appendChild(document.createElement('br'));
-
-        document.querySelector("#log").appendChild(fragment);
-    });
-    </script>
+    <script src="demo/mnist.client.js"></script>
+    <div id="log" style="font-family: monospace; color: #00FF00;"></div>
 </body>
 </html
