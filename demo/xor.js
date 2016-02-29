@@ -25,6 +25,5 @@ for (var i = 0; i < 100000; i++) {
     if (i % 1000 == 0) { console.log(loss); }
 }
 
-var stats = net.layers.stats();
-console.log('100,000 iterations of network with ' + stats.parameters + ' parameters and ' + stats.nodes + ' nodes');
+console.log('100,000 iterations of network');
 console.timeEnd("nn");

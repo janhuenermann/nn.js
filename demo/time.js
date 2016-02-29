@@ -1,4 +1,4 @@
-function log(text) { ww.trigger('log', [text]); }
+var nn = require('../build/nn.js');
 
 var layers = [{ type: 'input', size: nn.Size3(1, 1, 1) }, { type: 'dot', size: 1 }, { type: 'lstm' }, { type: 'regression' }];
 var net = new nn.Network({ layers: layers, learner: { method: 'adadelta', timespan: 5, decay: { l2: 1e-5 } } });
@@ -21,9 +21,9 @@ for (var i = 0; i < 500000; i++) {
         var loss = net.backward([1]);
 
         if (k % 10000 === 0) {
-            log('run ' + k);
-            log(seq.toString());
-            log('loss: ' + loss)
+            console.log('run ' + k);
+            console.log(seq.toString());
+            console.log('loss: ' + loss)
         }
         ++k;
     }
@@ -32,7 +32,4 @@ for (var i = 0; i < 500000; i++) {
     net.backward([0]);
 }
 
-console.log(JSON.stringify(net.layers.parameters()));
-var stats = net.layers.stats();
-console.log('100,000 iterations of network with ' + stats.parameters + ' parameters and ' + stats.nodes + ' nodes');
 console.timeEnd("nn");
